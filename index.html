@@ -334,5 +334,15 @@
     new Date().getFullYear();
 </script>
 
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js")
+      .then(() => console.log("App Ready"))
+      .catch((error) => console.log("App Error:", error));
+  });
+}
+</script>
+
 </body>
 </html>
