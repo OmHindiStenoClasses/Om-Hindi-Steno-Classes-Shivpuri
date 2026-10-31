@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration | Om Hindi Steno Classes</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#eef3fa;
+  color:#183153;
+}
+.container{
+  max-width:480px;
+  margin:35px auto;
+  padding:25px;
+  background:white;
+  border-radius:15px;
+  box-shadow:0 5px 25px #0002;
+}
+h2{text-align:center;color:#123b70}
+p{text-align:center;color:#64748b}
+label{display:block;margin-top:14px;font-weight:bold}
+input,select{
+  width:100%;
+  padding:13px;
+  margin-top:7px;
+  border:1px solid #ccd5e1;
+  border-radius:7px;
+  font-size:16px;
+}
+button{
+  width:100%;
+  margin-top:22px;
+  padding:14px;
+  border:0;
+  border-radius:8px;
+  background:#123b70;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+#message{margin-top:18px;text-align:center;line-height:1.5}
+a{color:#123b70}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>Om Hindi Steno Classes</h2>
+<p>Student Registration Form</p>
+
+<form id="registerForm">
+
+<label>पूरा नाम</label>
+<input type="text" id="full_name" required>
+
+<label>मोबाइल नंबर</label>
+<input type="tel" id="mobile" required
+pattern="[0-9]{10}" maxlength="10"
+placeholder="10 अंकों का मोबाइल नंबर">
+
+<label>Email Address</label>
+<input type="email" id="email" required>
+
+<label>अपना Course चुनें</label>
+<select id="course" required>
+<option value="">Select Course</option>
+<option>Hindi Stenography</option>
+<option>Hindi Typing</option>
+<option>Computer Classes</option>
+<option>Online Coaching</option>
+</select>
+
+<label>Password बनाएँ</label>
+<input type="password" id="password"
+minlength="8" required
+placeholder="कम से कम 8 अक्षर">
+
+<button type="submit" id="submitBtn">
+Register Now
+</button>
+
+</form>
+
+<div id="message"></div>
+
+<p>© Om Hindi Steno Classes, Shivpuri</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL =
+"https://vpgtjluqimhatiqgrsuw.supabase.co";
+
+const SUPABASE_ANON_KEY =
+"sb_publishable_FnJ8GIEheUv0D1Ax7OZFzA_PJPXIs97";
+
+const client = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
+
+document.getElementById("registerForm")
+.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const btn = document.getElementById("submitBtn");
+  const message = document.getElementById("message");
+
+  btn.disabled = true;
+  btn.textContent = "Please Wait...";
+  message.textContent = "";
+
+  const full_name =
+    document.getElementById("full_name").value.trim();
+  const mobile =
+    document.getElementById("mobile").value.trim();
+  const email =
+    document.getElementById("email").value.trim();
+  const course =
+    document.getElementById("course").value;
+  const password =
+    document.getElementById("password").value;
+
+  try {
+    const { data, error } = await client.auth.signUp({
+      email: email,
+      password: password,
+      options: {
+        emailRedirectTo: window.location.origin,
+        data: {
+          full_name: full_name,
+          mobile: mobile,
+          course: course
+        }
+      }
+    });
+
+    if (error) throw error;
+
+    message.style.color = "green";
+    message.textContent =
+      "Registration request successful! कृपया अपने Email में Verification Link खोलें।";
+
+    document.getElementById("registerForm").reset();
+
+  } catch (error) {
+    message.style.color = "red";
+    message.textContent = error.message;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Register Now";
+  }
+});
+</script>
+
+</body>
+</html>
