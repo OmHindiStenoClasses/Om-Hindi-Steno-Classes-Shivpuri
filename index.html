@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b55">
+  <meta name="description" content="Om Hindi Steno Classes Shivpuri - Hindi Stenography, Hindi Typing, Computer Classes and Online Coaching.">
+  <title>Om Hindi Steno Classes Shivpuri</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #243247;
+      background: #f5f8fc;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #102b55;
+      color: white;
+      padding: 16px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .logo span { color: #ffc857; }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: #ffc857; }
+
+    .hero {
+      padding: 85px 7%;
+      background: linear-gradient(120deg, #102b55, #2367a8);
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span { color: #ffc857; }
+
+    .hero p {
+      font-size: 17px;
+      max-width: 700px;
+      margin: 0 auto 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 7px;
+      background: #ffc857;
+      color: #102b55;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .btn:hover { background: white; }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+    }
+
+    section { padding: 65px 7%; }
+
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      color: #102b55;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #66758a;
+      margin-bottom: 35px;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .course-card {
+      background: white;
+      padding: 27px 22px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+      border-bottom: 4px solid #ffc857;
+      transition: .2s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-icon {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .course-card h3 {
+      color: #102b55;
+      margin-bottom: 10px;
+    }
+
+    .about {
+      background: white;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 15px auto;
+      color: #59677a;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .feature {
+      background: #eef4fc;
+      padding: 14px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #174b82;
+    }
+
+    .contact {
+      background: #eaf1fa;
+      text-align: center;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 30px;
+      max-width: 650px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    }
+
+    .contact-box p { margin: 12px 0; }
+
+    footer {
+      background: #102b55;
+      color: white;
+      padding: 25px 7%;
+      text-align: center;
+    }
+
+    footer p { margin: 5px; }
+
+    .whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: #20b968;
+      color: white;
+      padding: 13px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 15px #0003;
+      z-index: 10;
+    }
+
+    @media(max-width: 600px) {
+      header { justify-content: center; text-align: center; }
+      nav { justify-content: center; gap: 13px; }
+      .hero { padding: 65px 6%; }
+      section { padding: 48px 6%; }
+      .section-title { font-size: 25px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">OM <span>HINDI STENO</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <h1>Welcome to<br>
+    <span>Om Hindi Steno Classes</span>
+  </h1>
+  <p>
+    अपनी शिक्षा और कौशल को नई ऊँचाइयों तक ले जाएँ।
+    Hindi Stenography, Hindi Typing और Computer Education
+    की बेहतर सीखने की शुरुआत यहाँ से करें।
+  </p>
+  <a class="btn" href="#courses">Explore Courses</a>
+  <a class="btn btn-outline"
+     href="https://wa.me/919074468008?text=Namaste%2C%20mujhe%20admission%20ki%20jankari%20chahiye."
+     target="_blank">Admission Enquiry</a>
+</section>
+
+<section id="about" class="about">
+  <h2 class="section-title">About Our Institute</h2>
+  <p>
+    Om Hindi Steno Classes Shivpuri में आपका स्वागत है।
+    हमारा उद्देश्य विद्यार्थियों को Stenography, Typing
+    और Computer Education में बेहतर प्रशिक्षण देना है।
+  </p>
+  <div class="features">
+    <div class="feature">✓ Online Classes</div>
+    <div class="feature">✓ Offline Classes</div>
+    <div class="feature">✓ Practical Learning</div>
+    <div class="feature">✓ Student Support</div>
+  </div>
+</section>
+
+<section id="courses">
+  <h2 class="section-title">Our Courses</h2>
+  <p class="section-subtitle">
+    अपने लक्ष्य के अनुसार कोर्स चुनें।
+  </p>
+
+  <div class="courses">
+
+    <div class="course-card">
+      <div class="course-icon">⌨️</div>
+      <h3>Hindi Stenography</h3>
+      <p>हिंदी शॉर्टहैंड का प्रशिक्षण और नियमित अभ्यास।</p>
+    </div>
+
+    <div class="course-card">
+      <div class="course-icon">📝</div>
+      <h3>Hindi Typing</h3>
+      <p>हिंदी टाइपिंग और गति बढ़ाने का अभ्यास।</p>
+    </div>
+
+    <div class="course-card">
+      <div class="course-icon">💻</div>
+      <h3>Computer Classes</h3>
+      <p>कंप्यूटर की बुनियादी और व्यावहारिक शिक्षा।</p>
+    </div>
+
+    <div class="course-card">
+      <div class="course-icon">🌐</div>
+      <h3>Online Coaching</h3>
+      <p>घर बैठे ऑनलाइन पढ़ाई और मार्गदर्शन।</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <p class="section-subtitle">
+    Admission और Courses की जानकारी के लिए संपर्क करें।
+  </p>
+
+  <div class="contact-box">
+    <h3>Om Hindi Steno Classes Shivpuri</h3>
+    <p>📍 Adarsh Nagar, Near Govt. Girls High School, Shivpuri</p>
+    <p>📞 9074468008</p>
+    <p>🎓 Online और Offline दोनों Classes उपलब्ध</p>
+
+    <a class="btn"
+       href="https://wa.me/919074468008?text=Namaste%2C%20mujhe%20course%20ki%20jankari%20chahiye."
+       target="_blank">WhatsApp करें</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>Om Hindi Steno Classes Shivpuri</strong></p>
+  <p>Learn Today, Succeed Tomorrow.</p>
+  <p>© <span id="year"></span> All Rights Reserved.</p>
+</footer>
+
+<a class="whatsapp"
+   href="https://wa.me/919074468008"
+   target="_blank">WhatsApp</a>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
